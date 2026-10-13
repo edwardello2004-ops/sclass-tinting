@@ -1536,10 +1536,6 @@ a.vrow:hover {
   .visit-actions .btn {
     flex: 1 1 100%;
   }
-  .tint {
-    border-radius: 26px 26px 0 0;
-    margin-top: -26px;
-  }
   .reviews-wrap {
     border-radius: 26px 26px 0 0;
     margin-top: -26px;
