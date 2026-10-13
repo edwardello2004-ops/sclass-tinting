@@ -734,60 +734,6 @@ body {
   gap: 12px;
 }
 
-/* ---------- GLASS BAND ---------- */
-.band {
-  position: relative;
-  height: clamp(520px, 92vh, 860px);
-  overflow: hidden;
-  background: var(--night);
-  display: grid;
-  place-items: center;
-}
-.band-back {
-  position: absolute;
-  inset: -18% 0;
-  will-change: transform;
-}
-.band-back img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.85;
-}
-.band-front {
-  position: absolute;
-  right: 9%;
-  top: 18%;
-  width: min(30vw, 400px);
-  aspect-ratio: 4 / 5;
-  border-radius: 200px 200px 24px 24px;
-  overflow: hidden;
-  box-shadow: 0 50px 90px -40px rgba(0, 0, 0, 0.9);
-  will-change: transform;
-}
-.band-front img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.band-line {
-  position: relative;
-  justify-self: start;
-  margin-left: var(--gutter) !important;
-  font-family: var(--display);
-  font-stretch: 125%;
-  font-weight: 900;
-  font-size: clamp(46px, 8vw, 128px);
-  line-height: 0.92;
-  letter-spacing: -0.03em;
-  will-change: transform;
-}
-.band-line em {
-  font-style: normal;
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--mist);
-}
-
 /* ---------- TINT GUIDE ---------- */
 .tint {
   background: var(--paper);
@@ -1399,16 +1345,6 @@ a.vrow:hover {
   .rev-2,
   .rev-3 {
     margin-top: 0;
-  }
-  .band-front {
-    width: 46vw;
-    right: 6%;
-    top: auto;
-    bottom: 8%;
-  }
-  .band-line {
-    align-self: start;
-    margin-top: 16vh !important;
   }
   .tint-head,
   .svc-head {
