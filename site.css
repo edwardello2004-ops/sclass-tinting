@@ -311,7 +311,8 @@ body {
   z-index: -2;
   background:
     linear-gradient(90deg, rgba(6, 9, 11, 0.92) 0%, rgba(6, 9, 11, 0.6) 38%, rgba(6, 9, 11, 0) 72%),
-    linear-gradient(0deg, var(--ink) 0%, rgba(6, 9, 11, 0) 40%);
+    linear-gradient(0deg, var(--ink) 0%, rgba(6, 9, 11, 0) 40%),
+    rgba(6, 9, 11, 0.22);
 }
 .hero-streak {
   position: absolute;
