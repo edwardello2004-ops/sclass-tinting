@@ -557,9 +557,11 @@ body {
 .link-ig .ico {
   color: var(--signal-hi);
 }
-.link-ig span {
+.link-ig em {
+  font-style: normal;
   color: var(--glass);
   font-weight: 500;
+  white-space: nowrap;
 }
 .link-ig:hover {
   gap: 14px;
