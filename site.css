@@ -690,7 +690,7 @@ body {
 /* ---------- SERVICES ---------- */
 .services {
   padding: clamp(80px, 10vw, 140px) var(--gutter);
-  background: linear-gradient(180deg, var(--ink), var(--night) 30%, var(--night));
+  background: var(--ink);
   border-top: 1px solid var(--line);
 }
 .svc-head,
@@ -838,13 +838,11 @@ body {
 
 /* ---------- TINT GUIDE ---------- */
 .tint {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
   padding: clamp(80px, 10vw, 140px) var(--gutter);
-  border-radius: 40px 40px 0 0;
-  margin-top: -40px;
+  border-top: 1px solid var(--line);
   position: relative;
-  z-index: 2;
 }
 .tint-head,
 .tint-stage,
@@ -854,7 +852,7 @@ body {
   margin-right: auto;
 }
 .tint .label {
-  color: #4f646d;
+  color: var(--glass);
 }
 .tint-head {
   display: grid;
@@ -869,10 +867,10 @@ body {
 }
 .tint-head > p:last-child {
   font-size: 16px;
-  color: #33434b;
+  color: var(--mist);
 }
 .tint-head strong {
-  color: var(--ink);
+  color: var(--paper);
 }
 .tint-stage {
   display: grid;
@@ -887,7 +885,7 @@ body {
   border-radius: 28px;
   overflow: hidden;
   background: #0d1418;
-  box-shadow: 0 40px 80px -50px rgba(6, 9, 11, 0.7);
+  border: 1px solid var(--line);
 }
 .tint-view > img {
   position: absolute;
@@ -939,8 +937,8 @@ body {
   flex-direction: column;
   padding: clamp(24px, 2.6vw, 36px);
   border-radius: 28px;
-  background: #fff;
-  border: 1px solid #d8dfdf;
+  background: var(--night);
+  border: 1px solid var(--line);
 }
 .tint-readout {
   display: flex;
@@ -964,7 +962,7 @@ body {
 }
 .tint-desc {
   margin-top: 16px !important;
-  color: #33434b;
+  color: var(--mist);
   font-size: 16px;
   min-height: 3.2em;
 }
@@ -981,7 +979,7 @@ body {
   font-weight: 600;
 }
 .tint-meters dt {
-  color: #4f646d;
+  color: var(--glass);
 }
 .tint-meters dd {
   margin: 0;
@@ -991,7 +989,7 @@ body {
   grid-column: 1 / -1;
   height: 8px;
   border-radius: 99px;
-  background: #e1e7e7;
+  background: var(--steel);
   overflow: hidden;
 }
 .meter i {
@@ -999,7 +997,7 @@ body {
   height: 100%;
   width: 35%;
   border-radius: inherit;
-  background: linear-gradient(90deg, #4f646d, var(--ink));
+  background: linear-gradient(90deg, #4f646d, var(--mist));
   transition: width 0.6s var(--ease);
 }
 .meter-light i {
@@ -1014,7 +1012,7 @@ body {
 }
 .tint-opt {
   appearance: none;
-  border: 2px solid transparent;
+  border: 2px solid var(--line);
   padding: 0;
   cursor: pointer;
   border-radius: 14px;
@@ -1057,7 +1055,7 @@ body {
 .site .tint-fine {
   margin-top: 28px;
   font-size: 13.5px;
-  color: #4f646d;
+  color: var(--glass);
   max-width: 820px;
   margin-left: auto;
   margin-right: auto;
@@ -1292,7 +1290,7 @@ a.vrow:hover {
   position: relative;
   overflow: hidden;
   padding: clamp(80px, 10vw, 130px) var(--gutter);
-  background: var(--night);
+  background: var(--ink);
   border-top: 1px solid var(--line);
   text-align: center;
   isolation: isolate;
