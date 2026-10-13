@@ -1,27 +1,6 @@
-/* S Class Auto Tinting: hero video, transform-only parallax, reveal-on-scroll. */
+/* S Class Auto Tinting: transform-only parallax, reveal-on-scroll, tint guide. */
 (function () {
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var CDN = "https://d2ol7oe51mr4n9.cloudfront.net/user_3IeX19i4n0RUUtET6qjzNRQ09Zx/";
-
-  /* Hero video: 1080p or 720p by viewport, muted loop, poster only for reduced motion. */
-  var v = document.querySelector(".hero-video");
-  if (v) {
-    var src = window.innerWidth >= 900 || window.devicePixelRatio > 2
-      ? CDN + "816dd816-b2ea-4b29-bb6d-52b395c2d2ab.mp4"
-      : CDN + "fe3eb291-1d86-4cc1-9021-15630911702e.mp4";
-    var applyVideo = function () {
-      if (reduce.matches) { v.pause(); return; }
-      if (!v.getAttribute("src")) { v.src = src; v.load(); }
-      v.muted = true;
-      var p = v.play();
-      if (p) p.catch(function () {});
-    };
-    applyVideo();
-    reduce.addEventListener("change", applyVideo);
-    document.addEventListener("visibilitychange", function () {
-      document.hidden ? v.pause() : applyVideo();
-    });
-  }
 
   /* Parallax: each [data-depth] moves by (host centre - viewport centre) x depth. */
   var items = [], raf = 0, running = false;
