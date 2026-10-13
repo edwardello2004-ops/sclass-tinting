@@ -1105,12 +1105,14 @@ body {
 .rev-3 {
   margin-top: 120px;
 }
+.rev-src {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--glass);
 }
+.rev blockquote {
   margin: 0;
 }
 .rev blockquote p {
