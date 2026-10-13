@@ -297,6 +297,7 @@ body {
 }
 .ht-dim {
   animation-delay: 0.12s;
+  width: max-content;
   background: linear-gradient(90deg, var(--paper) 0%, var(--glass) 45%, #3a4b53 100%);
   -webkit-background-clip: text;
   background-clip: text;
