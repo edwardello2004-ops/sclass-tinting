@@ -417,6 +417,10 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  background: #3ddc84;
+  box-shadow: 0 0 0 4px rgba(61, 220, 132, 0.2);
+}
+.is-closed .chip-dot {
   background: var(--signal-hi);
   box-shadow: 0 0 0 4px rgba(227, 38, 45, 0.2);
 }

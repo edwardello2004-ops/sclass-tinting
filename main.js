@@ -2,6 +2,29 @@
 (function () {
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  /* Live open/closed status from shop hours: daily 9 a.m. to 8 p.m., Brampton (Toronto time). */
+  var status = document.querySelectorAll("[data-open-status]");
+  if (status.length) {
+    var setStatus = function () {
+      var t;
+      try {
+        var parts = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Toronto", hour: "numeric", minute: "numeric", hourCycle: "h23" }).formatToParts(new Date());
+        var h = 0, m = 0;
+        parts.forEach(function (p) { if (p.type === "hour") h = +p.value; if (p.type === "minute") m = +p.value; });
+        var mins = h * 60 + m;
+        if (mins >= 540 && mins < 1200) t = "Open now \u00b7 until 8 p.m.";
+        else t = "Closed \u00b7 opens " + (mins < 540 ? "" : "tomorrow ") + "at 9 a.m.";
+      } catch (e) { return; }
+      Array.prototype.forEach.call(status, function (el) {
+        el.textContent = t;
+        var chip = el.closest(".hero-chip");
+        if (chip) chip.classList.toggle("is-closed", t.indexOf("Closed") === 0);
+      });
+    };
+    setStatus();
+    setInterval(setStatus, 60000);
+  }
+
   /* Parallax: each [data-depth] moves by (host centre - viewport centre) x depth. */
   var items = [], raf = 0, running = false;
   var collect = function () {
