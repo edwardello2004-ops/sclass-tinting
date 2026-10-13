@@ -73,6 +73,59 @@
     });
   }
 
+  /* Nav turns solid once the page scrolls; floating call button shows after the hero. */
+  var nav = document.getElementById("nav");
+  var hero = document.querySelector(".hero");
+  var fab = document.getElementById("float-call");
+  var onChrome = function () {
+    var y = window.scrollY;
+    if (nav) nav.classList.toggle("is-solid", y > 40);
+    if (fab && hero) fab.classList.toggle("is-on", y > hero.offsetHeight * 0.8);
+  };
+  onChrome();
+  window.addEventListener("scroll", onChrome, { passive: true });
+
+  /* Tint guide: overlay opacity follows 1 - VLT^0.6, a perceptual stand-in for
+     how much darker the view gets through each shade. */
+  var SHADES = {
+    70: ["Light", "Barely there. Takes the edge off glare and heat while the glass stays close to factory clear.", "Low", 0.19],
+    50: ["Medium light", "A soft smoke. A cooler look with an easy, clear view out, day or night.", "Moderate", 0.34],
+    35: ["Medium", "A balanced shade. Clearly darker from outside and still comfortable to see through.", "Good", 0.47],
+    20: ["Dark", "Strong privacy from outside. The view out stays clear in daylight; night driving takes more care.", "High", 0.62],
+    5: ["Limo", "Near black from outside. Usually reserved for rear glass where the rules allow it.", "Maximum", 0.83]
+  };
+  var opts = Array.prototype.slice.call(document.querySelectorAll(".tint-opt"));
+  var $ = function (id) { return document.getElementById(id); };
+  var pick = function (btn, focus) {
+    var v = btn.getAttribute("data-vlt"), d = SHADES[v];
+    opts.forEach(function (o) {
+      var on = o === btn;
+      o.setAttribute("aria-checked", on ? "true" : "false");
+      o.tabIndex = on ? 0 : -1;
+    });
+    $("tint-film").style.opacity = d[3];
+    $("tint-pct").textContent = v + "%";
+    $("tint-badge-n").textContent = v + "%";
+    $("tint-name").textContent = d[0];
+    $("tint-desc").textContent = d[1];
+    $("tint-m1v").textContent = v + "%";
+    $("tint-m1").style.width = v + "%";
+    $("tint-m2v").textContent = d[2];
+    $("tint-m2").style.width = (100 - v) + "%";
+    if (focus) btn.focus();
+  };
+  opts.forEach(function (o, i) {
+    o.addEventListener("click", function () { pick(o); });
+    o.addEventListener("keydown", function (e) {
+      var k = e.key, n = null;
+      if (k === "ArrowRight" || k === "ArrowDown") n = opts[(i + 1) % opts.length];
+      if (k === "ArrowLeft" || k === "ArrowUp") n = opts[(i - 1 + opts.length) % opts.length];
+      if (n) { e.preventDefault(); pick(n, true); }
+    });
+  });
+  var cur = document.querySelector('.tint-opt[aria-checked="true"]');
+  if (cur) pick(cur);
+
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 })();
