@@ -249,7 +249,6 @@ body {
     rgba(238, 241, 238, 0.04) 50%,
     rgba(238, 241, 238, 0) 56%
   );
-  mix-blend-mode: screen;
   will-change: transform;
 }
 .hero-copy {
