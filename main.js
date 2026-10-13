@@ -7,8 +7,8 @@
   var v = document.querySelector(".hero-video");
   if (v) {
     var src = window.innerWidth >= 900 || window.devicePixelRatio > 2
-      ? CDN + "35f2c240-6348-49c4-890c-e74d2d7568bd.mp4"
-      : CDN + "3a745a5f-9202-4e6f-b53d-f2d1ccccb0e1.mp4";
+      ? CDN + "816dd816-b2ea-4b29-bb6d-52b395c2d2ab.mp4"
+      : CDN + "fe3eb291-1d86-4cc1-9021-15630911702e.mp4";
     var applyVideo = function () {
       if (reduce.matches) { v.pause(); return; }
       if (!v.getAttribute("src")) { v.src = src; v.load(); }
