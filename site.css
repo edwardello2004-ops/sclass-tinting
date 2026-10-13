@@ -340,8 +340,8 @@ body {
 .pane-wrap {
   position: absolute;
   top: calc(10% + var(--i) * 2.2%);
-  left: calc(var(--i) * 15%);
-  width: 38%;
+  left: calc(var(--i) * 18.6%);
+  width: 26%;
   height: 74%;
   perspective: 1400px;
   will-change: transform;
@@ -363,22 +363,23 @@ body {
 }
 .pane b {
   position: absolute;
-  left: 18%;
-  bottom: 13%;
+  left: 14%;
+  bottom: 12%;
   font-family: var(--display);
   font-stretch: 125%;
   font-weight: 900;
-  font-size: clamp(22px, 2.2vw, 34px);
+  font-size: clamp(20px, 1.9vw, 30px);
   letter-spacing: -0.02em;
   line-height: 1;
 }
 .pane small {
   position: absolute;
-  left: 18%;
-  bottom: 7%;
-  font-size: 11px;
+  left: 14%;
+  bottom: 6.5%;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
   text-transform: uppercase;
   color: var(--glass);
 }
@@ -1626,4 +1627,10 @@ a.vrow:hover {
   .site *::after {
     transition-duration: 0.01ms !important;
   }
+}
+
+@media (max-width: 560px) {
+  .pane small,
+  .hero-chip { display: none; }
+  .pane b { font-size: 17px; bottom: 9%; }
 }
