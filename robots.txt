@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://edwardello2004-ops.github.io/sclass-tinting/sitemap.xml
