@@ -525,6 +525,15 @@ body {
 .about-copy p + p {
   margin-top: 16px;
 }
+.about-copy p:nth-of-type(2) {
+  font-family: var(--display);
+  font-stretch: 108%;
+  font-weight: 600;
+  font-size: clamp(20px, 1.9vw, 26px);
+  line-height: 1.4;
+  color: var(--paper) !important;
+  margin-top: 6px;
+}
 .about-copy p:not(.label) {
   color: var(--mist);
   max-width: 560px;
@@ -639,24 +648,6 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, var(--steel) 0%, rgba(21, 33, 42, 0) 45%);
-}
-.svc-n {
-  position: absolute;
-  z-index: 1;
-  top: 16px;
-  left: 16px;
-  min-width: 40px;
-  height: 28px;
-  padding: 0 10px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  background: rgba(6, 9, 11, 0.7);
-  border: 1px solid rgba(200, 211, 213, 0.2);
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 12px;
-  letter-spacing: 0.08em;
 }
 .svc-body {
   padding: 4px 26px 28px;
